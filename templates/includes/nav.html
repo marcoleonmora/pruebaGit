@@ -1,0 +1,108 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Menu:</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <svg class="navbar-toggler-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="var(--color-text1)" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+
+            <!--<span class="navbar-toggler-icon" id="icon1"></span> -->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home'  %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'registro'  %}">Registrarse</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login'  %}">Ingresar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cambiar contraseña</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'ver_carrito'  %}">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <circle cx="6" cy="19" r="2"></circle>
+                            <circle cx="17" cy="19" r="2"></circle>
+                            <path d="M17 17h-11v-14h-2"></path>
+                            <path d="M6 5l14 1l-1 7h-13"></path>
+                         </svg>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'ver_carrito'  %}">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-car" width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <circle cx="7" cy="17" r="2"></circle>
+                            <circle cx="17" cy="17" r="2"></circle>
+                            <path d="M5 17h-2v-6l2 -5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"></path>
+                         </svg>
+         
+                    </a>
+                </li>
+
+
+
+
+
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout'  %}">Salir</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Opciones
+                    </a>
+                    <ul class="dropdown-menu">
+                        {% if user.rol == 'admin' %}
+                        <li><a class="dropdown-item" href="#">Usuarios</a></li>
+                        <li><a class="dropdown-item" href="#">Categorias de horas</a></li>
+                        <li><a class="dropdown-item" href="#">Tipos de Trabajo</a></li>
+                        <li><a class="dropdown-item" href="#">Categorias de Materiales</a></li>
+                        <li><a class="dropdown-item" href="#">Unidades de Medida</a></li>
+                        <li><a class="dropdown-item" href="#">Proveedores</a></li>
+                        <li><a class="dropdown-item" href="#">Insumos</a></li>
+                        <li><a class="dropdown-item" href="#">Equipos y Herramientas</a></li>
+                        <li><a class="dropdown-item" href="{% url 'productos' %}">Productos</a></li>
+                        {% elif  user.rol == 'gerente' %}
+
+                        <li><a class="dropdown-item" href="#">Asistentes de finca</a></li>
+                        <li><a class="dropdown-item" href="#">Proveedores</a></li>
+                        <li><a class="dropdown-item" href="#">Insumos</a></li>
+                        <li><a class="dropdown-item" href="#">Equipos y Herramientas</a></li>
+                        <li><a class="dropdown-item" href="#">Trabajadores</a></li>
+                        <li><a class="dropdown-item" href="{% url 'productos' %}">Productos</a></li>
+                        <li><a class="dropdown-item" href="#">Cultivos</a></li>
+                        <li><a class="dropdown-item" href="#">Maquinaria y Herramienta</a></li>
+                        <li><a class="dropdown-item" href="#">Insumos</a></li>
+                        <li><a class="dropdown-item" href="#">Productos</a></li>
+
+                        {% elif  user.rol == 'asistente' %}
+                        
+                        <li><a class="dropdown-item" href="#">Compra de Equipo y Herramienta</a></li>
+                        <li><a class="dropdown-item" href="#">Compra de Insumos</a></li>
+                        <li><a class="dropdown-item" href="#">Lotes</a></li>
+                        <li><a class="dropdown-item" href="#">Siembras de cultivos</a></li>
+                        <li><a class="dropdown-item" href="#">Registrar Labores</a></li>
+                        <li><a class="dropdown-item" href="#">Registrar Insumos utilizados</a></li>
+                        <li><a class="dropdown-item" href="#">Registrar Uso de Maquinaria</a></li>
+                        <li><a class="dropdown-item" href="#">Registrar Costos Indirectos</a></li>
+                        <li><a class="dropdown-item" href="#">Registrar Recoleccion de Cosecha</a></li>
+                        <li><a class="dropdown-item" href="#">Registrar Venta de Productos</a></li>
+                        {% endif%}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,13 @@
+# Archivos y carpetas a los que no se les hará seguimiento
+CLAVE.txt
+manage.py
+/env/
+/media/
+/static/
+*.css
+*.js
+*.map
+*.log
+
+# Database
+db.sqlite3  

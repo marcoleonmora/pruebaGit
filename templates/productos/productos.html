@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<div class="mb-3 descripcion">
+    <h4>Lista de Productos</h4>
+</div>
+
+<div class="row">
+
+    <table class="table">
+        <tbody>
+            {% for prod in productos %}
+            <tr>
+                t
+                <td><img src="{{ prod.icono.url }}" alt="X"> </td>
+                <td>{{prod.nombre}}</td>
+                <td><a href="{% url 'producto' prod.id %}" type="button" class="btn btn-info">Ver Detalles</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
