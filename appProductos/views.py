@@ -9,7 +9,6 @@ import json
 def verProductos(request, id= NULL):
 
     if not id:
-        #se agrega un comentario de prueba
         listaProductos = Producto.objects.all()
         context = {
             'productos': listaProductos,
