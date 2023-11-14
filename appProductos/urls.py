@@ -10,6 +10,6 @@ urlpatterns = [
     path('cambiarCantidad/', views.cambiarCantidad),
 ]
 """
-Se agregan estos comentarios para que se vea el cambio
+Se agregan estos NUEVOS COMENTARIOS para que se vea el cambio
 en el repositorio
 """
