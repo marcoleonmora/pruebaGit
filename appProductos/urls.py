@@ -10,5 +10,6 @@ urlpatterns = [
     path('cambiarCantidad/', views.cambiarCantidad),
 ]
 """
-Cambios realizados en MASTER para generar conflicto
+Se agregan estos NUEVOS COMENTARIOS para que se vea el cambio
+en el repositorio
 """
