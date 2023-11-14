@@ -10,6 +10,5 @@ urlpatterns = [
     path('cambiarCantidad/', views.cambiarCantidad),
 ]
 """
-Se agregan estos NUEVOS COMENTARIOS para que se vea el cambio
-en el repositorio
+Se MODIFICA LA LINEA para que se CREAR CONFLICTO
 """
