@@ -9,4 +9,7 @@ urlpatterns = [
     path('eliminar/<str:id>', views.eliminarItemCarrito, name="eliminar"),
     path('cambiarCantidad/', views.cambiarCantidad),
 ]
-
+"""
+Se agregan estos comentarios para que se vea el cambio
+en el repositorio
+"""
